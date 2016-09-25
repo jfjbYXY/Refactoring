@@ -36,7 +36,8 @@ public class Customer {
 			double thisAmount = 0;// 本片费用
 			Rental each = (Rental) rentals.nextElement();
 
-			thisAmount = amountFor(each);
+			// thisAmount = amountFor(each);//amountFor()改为each.getCharge();
+			thisAmount = each.getCharge();
 
 			// add frequent renter points
 			frequntRenterPoints++;
@@ -55,31 +56,32 @@ public class Customer {
 		return result;
 	}
 
-	/**
-	 * 1.使用shift+alt+M提取方法；改变返回变量为方法内的局部变量<br>
-	 * 2.改参数名aRental\result，便于理解
-	 * 
-	 * @param aRental
-	 * @return
-	 */
-	private double amountFor(Rental aRental) {
-		int result = 0;
-		// determine amounts for each line
-		switch (aRental.get_movie().get_priceCode()) {
-		case Movie.REGULAR:
-			result += 2;
-			if (aRental.get_daysRented() > 2)
-				result += (aRental.get_daysRented() - 2) * 1.5;
-			break;
-		case Movie.NEW_RELEASE:
-			result += aRental.get_daysRented() * 3;
-			break;
-		case Movie.CHILDRENS:
-			result += 1.5;
-			if (aRental.get_daysRented() > 3)
-				result += (aRental.get_daysRented() - 3) * 1.5;
-			break;
-		}
-		return result;
-	}
+	// /**
+	// * 1.使用shift+alt+M提取方法；改变返回变量为方法内的局部变量<br>
+	// * 2.改参数名aRental\result，便于理解<br>
+	// * 3.此方法应该放属于Rental类,并改名getCharge()
+	// *
+	// * @param aRental
+	// * @return
+	// */
+	// private double amountFor(Rental aRental) {
+	// int result = 0;
+	// // determine amounts for each line
+	// switch (aRental.get_movie().get_priceCode()) {
+	// case Movie.REGULAR:
+	// result += 2;
+	// if (aRental.get_daysRented() > 2)
+	// result += (aRental.get_daysRented() - 2) * 1.5;
+	// break;
+	// case Movie.NEW_RELEASE:
+	// result += aRental.get_daysRented() * 3;
+	// break;
+	// case Movie.CHILDRENS:
+	// result += 1.5;
+	// if (aRental.get_daysRented() > 3)
+	// result += (aRental.get_daysRented() - 3) * 1.5;
+	// break;
+	// }
+	// return result;
+	// }
 }
