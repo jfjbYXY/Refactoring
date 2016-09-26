@@ -7,7 +7,7 @@ public class Test {
 	@org.junit.Test
 	public void test() {
 		Customer customer = new Customer("yxy");
-		Movie movie1 = new Movie("东京沉默", Movie.NEW_RELEASE);
+		Movie movie1 = new Movie("东京沉没", Movie.NEW_RELEASE);
 		Movie movie2 = new Movie("米老鼠和唐老鸭", Movie.CHILDRENS);
 		Movie movie3 = new Movie("葫芦娃", Movie.CHILDRENS);
 		Movie movie4 = new Movie("建国大业", Movie.REGULAR);

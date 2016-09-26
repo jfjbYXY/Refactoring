@@ -79,7 +79,7 @@ public class Customer {
 	/**
 	 * *==Replace Temp with Query使用查询函数代替临时变量<br>
 	 * 
-	 * @return 全部费用
+	 * @return 本次全部费用
 	 */
 	private double getTotalCharge() {
 		double result = 0;
@@ -94,7 +94,7 @@ public class Customer {
 	/**
 	 * *==Replace Temp with Query使用查询函数代替临时变量<br>
 	 * 
-	 * @return 本次积分
+	 * @return 本次全部积分
 	 */
 	private int getTotalFrequentRenterPoints() {
 		int result = 0;
