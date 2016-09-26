@@ -62,6 +62,20 @@ public class Customer {
 		return result;
 	}
 
+	public String htmlStatement() {
+		Enumeration rentals = _rentals.elements();
+		String result = "<H1>Rentals for <EM>" + get_name() + "</E></H1><P>\n";
+		while (rentals.hasMoreElements()) {
+			Rental each = (Rental) rentals.nextElement();
+			// show figures for each rental
+			result += each.get_movie().get_title() + ": " + String.valueOf(each.getCharge()) + "<BR>\n";
+		}
+		result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";
+		result += "On this rental you earned <EM>" + String.valueOf(getTotalFrequentRenterPoints())
+				+ "</EM> frequent renter points<P>";
+		return result;
+	}
+
 	/**
 	 * *==Replace Temp with Query使用查询函数代替临时变量<br>
 	 * 

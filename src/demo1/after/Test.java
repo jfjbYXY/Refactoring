@@ -19,7 +19,8 @@ public class Test {
 		customer.addRental(rental2);
 		customer.addRental(rental3);
 		customer.addRental(rental4);
-		System.out.println(customer.statement());
+		// System.out.println(customer.statement());
+		System.out.println(customer.htmlStatement());
 	}
 
 }
