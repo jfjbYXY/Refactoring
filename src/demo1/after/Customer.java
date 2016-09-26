@@ -39,11 +39,13 @@ public class Customer {
 			// thisAmount = amountFor(each);//amountFor()改为each.getCharge();
 			thisAmount = each.getCharge();
 
-			// add frequent renter points
-			frequntRenterPoints++;
-			// add bonus for a two day new release rental
-			if ((each.get_movie().get_priceCode() == Movie.NEW_RELEASE) && each.get_daysRented() > 1)
-				frequntRenterPoints++;
+			// // add frequent renter points
+			// frequntRenterPoints++;
+			// // add bonus for a two day new release rental
+			// if ((each.get_movie().get_priceCode() == Movie.NEW_RELEASE) &&
+			// each.get_daysRented() > 1)
+			// frequntRenterPoints++;
+			frequntRenterPoints += each.getFrequentRenterPoints();
 
 			// show figures for this rental
 			result += "\t" + each.get_movie().get_title() + "\t" + String.valueOf(thisAmount) + "\n";

@@ -11,7 +11,7 @@ public class Test {
 		Movie movie2 = new Movie("米老鼠和唐老鸭", Movie.CHILDRENS);
 		Movie movie3 = new Movie("葫芦娃", Movie.CHILDRENS);
 		Movie movie4 = new Movie("建国大业", Movie.REGULAR);
-		Rental rental1 = new Rental(movie1, 1);
+		Rental rental1 = new Rental(movie1, 3);
 		Rental rental2 = new Rental(movie2, 5);
 		Rental rental3 = new Rental(movie3, 7);
 		Rental rental4 = new Rental(movie4, 2);

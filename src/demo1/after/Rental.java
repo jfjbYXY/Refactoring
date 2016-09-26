@@ -52,4 +52,15 @@ public class Rental {
 		}
 		return result;
 	}
+
+	/**
+	 * 计算本次积分
+	 * @return
+	 */
+	int getFrequentRenterPoints() {
+		if ((get_movie().get_priceCode() == Movie.NEW_RELEASE) && get_daysRented() > 1)
+			return 2;
+		else
+			return 1;
+	}
 }
