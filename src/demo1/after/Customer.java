@@ -26,10 +26,10 @@ public class Customer {
 	}
 
 	public String statement() {
-		/** 全部费用 **/
-		double totalAmount = 0;
-		/** 本次积分 **/
-		int frequentRenterPoints = 0;
+		// /** 全部费用 **///被查询函数替代
+		// double totalAmount = 0;
+		// /** 本次积分 **///被查询函数替代
+		// int frequentRenterPoints = 0;
 		Enumeration rentals = _rentals.elements();
 		String result = "Rental Record for " + get_name() + "\n";
 		while (rentals.hasMoreElements()) {
@@ -45,11 +45,11 @@ public class Customer {
 			// if ((each.get_movie().get_priceCode() == Movie.NEW_RELEASE) &&
 			// each.get_daysRented() > 1)
 			// frequntRenterPoints++;
-			frequentRenterPoints += each.getFrequentRenterPoints();
+			// frequentRenterPoints += each.getFrequentRenterPoints();
 
 			// show figures for this rental
 			result += "\t" + each.get_movie().get_title() + "\t" + String.valueOf(thisAmount) + "\n";
-			totalAmount += thisAmount;
+			// totalAmount += thisAmount;
 		}
 
 		// add footer lines
@@ -63,7 +63,7 @@ public class Customer {
 	}
 
 	/**
-	 * *使用查询函数代替临时变量<br>
+	 * *==Replace Temp with Query使用查询函数代替临时变量<br>
 	 * 
 	 * @return 全部费用
 	 */
@@ -78,7 +78,7 @@ public class Customer {
 	}
 
 	/**
-	 * *使用查询函数代替临时变量<br>
+	 * *==Replace Temp with Query使用查询函数代替临时变量<br>
 	 * 
 	 * @return 本次积分
 	 */
@@ -93,9 +93,11 @@ public class Customer {
 	}
 
 	// /**
+	// * *==Extract Method<br>
 	// * 1.使用shift+alt+M提取方法；改变返回变量为方法内的局部变量<br>
 	// * 2.改参数名aRental\result，便于理解<br>
-	// * 3.此方法应该放属于Rental类,并改名getCharge()
+	// * *==Move Method<br>
+	// * 3.此方法应该放属于Rental类,并改名为getCharge()
 	// *
 	// * @param aRental
 	// * @return

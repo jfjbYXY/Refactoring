@@ -25,9 +25,11 @@ public class Rental {
 	}
 
 	/**
+	 * *==Extract Method<br>
 	 * 1.使用shift+alt+M提取方法；改变返回变量为方法内的局部变量<br>
 	 * 2.改参数名aRental\result，便于理解<br>
-	 * 3.此方法应该放属于Rental类
+	 * *==Move Method<br>
+	 * 3.此方法应该放属于Rental类,并改名为getCharge()
 	 * 
 	 * @param aRental
 	 * @return
@@ -55,6 +57,7 @@ public class Rental {
 
 	/**
 	 * 计算本次积分
+	 * 
 	 * @return
 	 */
 	int getFrequentRenterPoints() {
