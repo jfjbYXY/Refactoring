@@ -33,7 +33,7 @@ public class Rental {
 	 * @return
 	 */
 	double getCharge() {
-		int result = 0;
+		double result = 0;
 		// determine amounts for each line
 		switch (get_movie().get_priceCode()) {
 		case Movie.REGULAR:
