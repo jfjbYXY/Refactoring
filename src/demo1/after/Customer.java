@@ -26,10 +26,10 @@ public class Customer {
 	}
 
 	public String statement() {
-		/****/
+		/** 全部费用 **/
 		double totalAmount = 0;
-		/****/
-		int frequntRenterPoints = 0;
+		/** 本次积分 **/
+		int frequentRenterPoints = 0;
 		Enumeration rentals = _rentals.elements();
 		String result = "Rental Record for " + get_name() + "\n";
 		while (rentals.hasMoreElements()) {
@@ -45,7 +45,7 @@ public class Customer {
 			// if ((each.get_movie().get_priceCode() == Movie.NEW_RELEASE) &&
 			// each.get_daysRented() > 1)
 			// frequntRenterPoints++;
-			frequntRenterPoints += each.getFrequentRenterPoints();
+			frequentRenterPoints += each.getFrequentRenterPoints();
 
 			// show figures for this rental
 			result += "\t" + each.get_movie().get_title() + "\t" + String.valueOf(thisAmount) + "\n";
@@ -53,8 +53,42 @@ public class Customer {
 		}
 
 		// add footer lines
-		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-		result += "You earned " + String.valueOf(frequntRenterPoints) + " frequent renter Points";
+		// result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		// result += "You earned " + String.valueOf(frequntRenterPoints) + "
+		// frequent renter Points";
+		// *使用查询函数代替临时变量
+		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
+		result += "You earned " + String.valueOf(getTotalFrequentRenterPoints()) + " frequent renter Points";
+		return result;
+	}
+
+	/**
+	 * *使用查询函数代替临时变量<br>
+	 * 
+	 * @return 全部费用
+	 */
+	private double getTotalCharge() {
+		double result = 0;
+		Enumeration rentals = _rentals.elements();
+		while (rentals.hasMoreElements()) {
+			Rental each = (Rental) rentals.nextElement();
+			result += each.getCharge();
+		}
+		return result;
+	}
+
+	/**
+	 * *使用查询函数代替临时变量<br>
+	 * 
+	 * @return 本次积分
+	 */
+	private int getTotalFrequentRenterPoints() {
+		int result = 0;
+		Enumeration rentals = _rentals.elements();
+		while (rentals.hasMoreElements()) {
+			Rental each = (Rental) rentals.nextElement();
+			result += each.getFrequentRenterPoints();
+		}
 		return result;
 	}
 

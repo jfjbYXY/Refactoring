@@ -26,9 +26,9 @@ public class Customer {
 	}
 
 	public String statement() {
-		/****/
+		/** 全部费用 **/
 		double totalAmount = 0;
-		/****/
+		/** 本次积分 **/
 		int frequntRenterPoints = 0;
 		Enumeration rentals = _rentals.elements();
 		String result = "Rental Record for " + get_name() + "\n";
